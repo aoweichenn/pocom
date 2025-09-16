@@ -17,6 +17,8 @@ add_library(pocoms STATIC
         source/lexer/cases/identifier.cpp
         include/lexer/cases/utils.hpp
         source/lexer/cases/utils.cpp
+        include/lexer/regex/engine.hpp
+        source/lexer/regex/engine.cpp
 )
 
 add_executable(pocom
@@ -25,5 +27,7 @@ add_executable(pocom
         source/lexer/cases/identifier.cpp
         include/lexer/cases/utils.hpp
         source/lexer/cases/utils.cpp
+        include/lexer/regex/engine.hpp
+        source/lexer/regex/engine.cpp
 )
 target_link_libraries(pocom pocoms)
