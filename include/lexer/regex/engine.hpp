@@ -93,7 +93,7 @@ namespace lexer::regex {
         std::unordered_map<std::unordered_set<NFAState *>, DFAState *> state_map;
 
     public:
-        DFA() = delete;
+        DFA() = default;
         DFA(const DFA &) = delete;
         DFA &operator=(const DFA &) = delete;
         DFA(DFA &&) = default;
@@ -117,7 +117,7 @@ namespace lexer::regex {
     // NFA 构建：后缀表达式 -> NFA
     std::unique_ptr<NFA> build_nfa(const std::string &postfix);
     // DFA 构建: NFA -> DFA ，NFA 所有权转移到 DFA
-    std::unique_ptr<DFA> build_dfa(std::unique_ptr<NFA> nfa);
+    std::unique_ptr<DFA> build_dfa(const std::unique_ptr<NFA> &nfa);
     // DFA 最小化：原始 DFA -> 最小 DFA
     std::unique_ptr<DFA> minimize_dfa(const DFA &original_dfa);
     // 匹配：最小 DFA + 输入字符串 -> 是否完全匹配
