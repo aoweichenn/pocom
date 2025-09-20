@@ -468,7 +468,7 @@ namespace c11 {
                 size_t start_line = line, start_column = column;
                 update_position(punc, line, column);
                 pos += punc.size();
-                result.tokens.emplace_back(TokenType::TOK_OPERATOR, punc, start_line, start_column);
+                result.tokens.emplace_back(TokenType::TOK_PUNCTUATOR, punc, start_line, start_column);
                 return true;
             }
         }
@@ -524,7 +524,6 @@ namespace c11 {
         result.tokens.emplace_back(TokenType::TOK_UNKNOWN, char_string, start_line, start_column);
     }
 }
-
 
 // Scaaner 核心逻辑函数
 namespace c11 {

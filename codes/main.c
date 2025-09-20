@@ -6,4 +6,6 @@
  * dasdasdsa\nsadasdas\b\n
  * dsadasdsad\\\casdas\dcs
  */
-"12342353253524\n24324\n"
+int main(){
+    return 0;
+}
