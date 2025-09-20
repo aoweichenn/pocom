@@ -378,7 +378,7 @@ namespace c11 {
     }
 
     // 匹配浮点常量
-    bool Scanner::match_float(const std::string &input, size_t &pos, size_t &line, size_t &column,
+    bool Scanner::match_float(const std::string &input, size_t &pos, const size_t &line, const size_t &column,
                               ScanResult &result) const {
         std::smatch match;
         if (std::regex_search(input.cbegin() + static_cast<long>(pos), input.cend(), match,
@@ -495,7 +495,7 @@ namespace c11 {
 
     // 匹配空白字符
     bool Scanner::match_whitespace(const std::string &input, size_t &pos, size_t &line, size_t &column,
-                                   ScanResult &result) const {
+                                   [[maybe_unused]] ScanResult &result) const {
         std::smatch match;
         if (std::regex_search(input.cbegin() + static_cast<long>(pos), input.cend(), match,
                               this->regex_patterns.at(TokenType::TOK_WHITESPACE),

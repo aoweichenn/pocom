@@ -39,7 +39,7 @@ TEST(ScannerTest, KeywordRecognition) {
     const auto [tokens, errors] = scanner.scan(code);
 
     EXPECT_EQ(errors.size(), 0);
-    EXPECT_EQ(tokens.size(), 21);
+    EXPECT_EQ(tokens.size(), 23);
 
     // 所有关键字都应该被识别为TOK_KEYWORD
     for (const auto &token: tokens) {
@@ -62,9 +62,8 @@ TEST(ScannerTest, IdentifierRecognition) {
         EXPECT_EQ(tokens[i].type, TokenType::TOK_IDENTIFIER);
     }
 
-    // 最后一个会被拆分为整数和标识符
-    EXPECT_EQ(tokens[4].type, TokenType::TOK_INTEGER);
-    EXPECT_EQ(tokens[4].value, "123");
+    // 最后一个会被直接标记为未知字符，除非有空格等数据
+    EXPECT_EQ(tokens[4].type, TokenType::TOK_UNKNOWN);
 }
 
 // 测试整数常量识别

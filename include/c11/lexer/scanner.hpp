@@ -105,7 +105,7 @@ namespace c11 {
         static bool match_char(const std::string &input, size_t &pos, size_t &line, size_t &column,
                                ScanResult &result);
         // 匹配浮点常量
-        bool match_float(const std::string &input, size_t &pos, size_t &line, size_t &column,
+        bool match_float(const std::string &input, size_t &pos, const size_t &line, const size_t &column,
                          ScanResult &result) const;
         // 匹配整数常量，含非法整数检测
         bool match_integer(const std::string &input, size_t &pos, size_t &line, size_t &column,
