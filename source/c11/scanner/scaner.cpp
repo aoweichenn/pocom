@@ -488,6 +488,7 @@ namespace c11 {
             update_position(id, line, column);
             pos += id.size();
             result.tokens.emplace_back(type, id, start_line, start_column);
+            return true;
         }
         return false;
     }
