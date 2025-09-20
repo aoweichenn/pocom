@@ -19,6 +19,8 @@ add_library(pocoms STATIC
         source/lexer/cases/utils.cpp
         include/lexer/regex/engine.hpp
         source/lexer/regex/engine.cpp
+        include/c11/lexer/scanner.hpp
+        source/c11/scanner/scaner.cpp
 )
 
 add_executable(pocom
@@ -29,5 +31,7 @@ add_executable(pocom
         source/lexer/cases/utils.cpp
         include/lexer/regex/engine.hpp
         source/lexer/regex/engine.cpp
+        include/c11/lexer/scanner.hpp
+        source/c11/scanner/scaner.cpp
 )
 target_link_libraries(pocom pocoms)
