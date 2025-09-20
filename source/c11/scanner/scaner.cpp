@@ -84,7 +84,7 @@ namespace c11 {
         this->regex_patterns[TokenType::TOK_INTEGER] = std::regex(
             "0x[0-9a-fA-F]+|0X[0-9a-fA-F]+" // 十六进制
             "|0[0-7]*"                      // 八进制
-            "|[1-9][0-9]"                   // 十进制
+            "|[1-9][0-9]*"                  // 十进制
         );
         // 浮点数常量：123.45、.45、123e-5、123.45e+6
         this->regex_patterns[TokenType::TOK_FLOAT] = std::regex(
