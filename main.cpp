@@ -38,7 +38,7 @@ std::string read_file_to_string(const std::string &filename) {
 }
 
 int main() {
-    const std::string code = read_file_to_string(R"(./main.c)");
+    const std::string code = read_file_to_string(R"(/mnt/d/DEMOS/STU/CPP/pocom/codes/main.c)");
     const c11::Scanner s;
     const auto [tokens, errors] = s.scan(code);
     std::cout << tokens.size();
